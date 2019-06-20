@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .active {
+        color: red;
+    }
+
+    .cc {
+        font-size: 40px;
+    }
+</style>
+
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li class="cc">c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+
+    </ul>
+    <script>
+        var ali = document.getElementsByTagName("li")
+        for (var i = 0; i < ali.length; i++) {
+            ali[i].onclick = function () {
+                this.className = " active"
+            }
+        }
+
+        // 这么写，点击每一个是会变成红色，但是cc的类名被覆盖类，导致字体也小了
+        // 所以，要先获取到他们的 className,然后进行拼接
+
+
+        var ali = document.getElementsByTagName("li");
+        for (var i = 0; i < ali.length; i++) {
+            ali[i].onclick = function () {
+                var a = this .className;    //定义一个变量代表他们本来的classname,下面进行拼接
+                this.className =  a+  " active";
+            }
+        }
+
+         // 这么写就可以实现了
+
+         var ali = document.getElementsByTagName("li");
+        for (var i = 0; i < ali.length; i++) {
+            ali[i].onclick = function () {
+                // var a = this .className;    
+                // this.className =  a+  " active";
+                this. classList.add("active")   //这条语句相当于注释部分 classlist代表获取到类，add代表添加
+                this .classList.remove("cc")  //删除类
+            }
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
+<!-- 不用style方法，用添加一个类的方法，实现点击哪个li标签，让她变成红色 -->
