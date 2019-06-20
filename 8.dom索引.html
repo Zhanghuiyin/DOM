@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        var ali = document.getElementsByTagName("li");
+        for (var i = 0; i < ali.length; i++) {    //i=0 ,i从0开始，0代表里面第一个元素
+            ali[i].onclick = function () {
+                console.log(this.innerText);
+            }
+        }
+        // 给每一个li绑定事件，此时在控制台输出，点击一次，输出一个数字
+
+       
+    </script>
+</body>
+
+</html>
