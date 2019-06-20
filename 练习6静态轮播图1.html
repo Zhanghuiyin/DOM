@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .box img {
+           position: absolute;
+           top:0;
+           left: 50%;
+           width: 400px;
+           height: 150px;
+           margin-left: -200px; 
+
+        }
+        .btn{
+            position: absolute;
+            top:125px;
+            left:800px;
+            z-index: 100;
+        }
+        .btn li {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;   
+            background-color:orange;
+            color:white;
+            text-align: center;
+            line-height: 20px;
+        }
+        .left-btn{
+            position: absolute;
+            top:125px;
+            left:530px ;
+            z-index: 100;
+            
+        }
+        .left-btn li{
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;   
+            background-color:orange;
+            text-align: center;
+            line-height: 20px;
+            color:white;
+
+        }
+        .box .active{
+            z-index: 10;
+        }
+        .btn .active{
+            background-color:red;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    <img src="https://img.alicdn.com/tfs/TB1ovu6cBKw3KVjSZTEXXcuRpXa-240-145.jpg_240x5000Q75s0.jpg_.webp" alt="">
+    <img src="https://img.alicdn.com/tfs/TB1le5ZcBiE3KVjSZFMXXbQhVXa-240-145.jpg_240x5000Q75s0.jpg_.webp" alt="">
+    <img src="https://img.alicdn.com/tfs/TB1LZq1cvWG3KVjSZFPXXXaiXXa-240-145.jpg_240x5000Q75s0.jpg_.webp" alt="">
+    <img src="https://img.alicdn.com/tfs/TB1KGO1cvWG3KVjSZFPXXXaiXXa-240-145.jpg_240x5000Q75s0.jpg_.webp" alt="">
+    <img src="https://img.alicdn.com/tfs/TB1mU5_cBCw3KVjSZR0XXbcUpXa-240-145.jpg_240x5000Q75s0.jpg_.webp" alt="">
+</div>
+<div class="left-btn">
+    <li class="lt">&lt</li>
+    <li class="gt">&gt</li>
+  
+</div>
+
+<div class="btn">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+</div>
+
+<script>
+    var abox = document.getElementsByClassName("box") [0];
+    var aimg = abox.getElementsByTagName("img");
+    var abtn = document.getElementsByClassName("btn") [0];
+    var ali = abtn.getElementsByTagName("li");
+   
+    
+
+    for(var i = 0;i<ali.length;i++){
+        ali[i].index = i;
+        ali[i].onmouseover =function(){
+            for(var j=0;j<ali.length;j++){
+                aimg[j].classList.remove ("active");
+                ali[j].classList.remove("active");
+            }
+            aimg[this.index].classList.add ("active");
+            this.classList.add("active");  
+        }    
+    }
+ 
+    
+
+
+
+</script>
+</body>
+</html>
