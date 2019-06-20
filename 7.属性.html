@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .active{
+            color:red;
+        }  
+         /* 加一个类，改变颜色 */
+    </style>
+</head>
+<body>
+    <ul>
+        <li mysrc="hello"  class = "li1"  id="list">1</li> 
+        <!--一个标签可以有多个类名，这个mysrc是自己定义的一个名字 -->  
+    </ul>
+    <script>
+        var alist = document.getElementById("list");
+        alist.onclick=function(){
+        var attr1 = alist.getAttribute("mysrc")   
+        alist.setAttribute("class",attr1+"active") 
+         // 设置属性，括号里前面是设置的哪个属性，后面是设置内容
+            console.log(attr1);  
+        }
+    // 页面显示列表1 点击之后，1变成红色，打开控制台显示：hello
+    // getAttribute： 获取属性（自定义，原生的class id都能获取）
+    // setAttribute：设置属性，括号里前面是设置的哪个属性，后面是设置内容
+
+
+        alist.onclick = function(){
+        alist.className = "li1 active"; 
+        // 设置属性的第二种方法,和setAttribute实现效果一样
+        location.replace("http://www.baidu.com")
+        //  点击网址跳转路径
+    }
+ 
+    
+    </script>
+    
+</body>
+</html>
