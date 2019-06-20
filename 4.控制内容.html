@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById("box");
+        oBox.onclick=function(){
+            //  oBox.innerText = "hello world!"  // 这样实现了一个红色正方形，点击的时候正方形上面出现了hello wolrd
+          oBox.innerHTML = "<h1>hello world</h1>";//这个实现了点击出现一个标题“hello world!”
+        }
+        
+
+    
+    </script>
+</body>
+</html>
+总结：
+要是通过js控制修改内容：
+1.解析内容用innerText（一般用这个比较多）
+2.如果要插入标签，要解析标签，用innerHTML 
+
