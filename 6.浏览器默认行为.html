@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.getElementById("box");
+        oBox.oncontextmenu = function (e) {  
+        // return false;  正方形右键的时候，浏览器自带的右键显示框没有了
+         e.preventDefault();  //  事件对象的方法： 也是去掉浏览器默认行为，第二种方法（推荐这种方法）
+        }
+
+    </script>
+
+</body>
+
+</html>
