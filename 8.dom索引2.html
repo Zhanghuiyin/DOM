@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <ul>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+                <li>d</li>
+                <li>e</li>
+                <li>f</li>
+            </ul>
+            <script>
+                var ali = document.getElementsByTagName("li");
+                for (var i = 0; i < ali.length; i++) {    
+                    ali[i].index = i ;  //自定义一个属性，接收这个 i
+                    ali[i].onclick = function () {
+                        console.log(this.index);
+                    }
+                }
+               
+            //     var person = {
+            //         name : "zs",
+            //          age:20 ,
+            //          eat:function(){
+            //          }
+            //          }
+            // person.name 获取这个对象属性的方法，那么同理，
+            // 上面的index是给ali新加的一个属性，随便起的属性名字，目的就是接收这个i的数值
+            
+                
+            </script>
+                
+</body>
+</html>
+和上道题不一样的是：这里li里面不是数字，改成了字母abcdef
+要实现点击的时候，控制台输出对应的第几位数字，比如a就是数字1
+
