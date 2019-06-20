@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+       
+        .box {
+            width: 300px;
+            /* height:100px ; */
+         
+            background-color:white;
+            border: 1px solid #000;
+            margin: 200px auto;
+
+        }
+
+        .header {
+            height: 30px;
+            background-color:black;
+        }
+
+        .header ul {
+            padding: 0;
+        }
+
+         .header li{
+            float: left;
+            height: 30px;
+            padding: 0 10px;
+            line-height: 30px;
+            list-style: none;
+            color: white;
+        }
+       .header ul .active{
+            background-color: grey;
+            color: black;
+        }
+        .body ul{
+            display: none;
+
+        }
+        .body .active{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="header">
+            <ul>
+                <li class="active">第一节课</li>
+                <li>第二节课</li>
+                <li>第三节课</li>
+
+            </ul>
+
+        </div>
+        <div class="body">
+            <ul class="active">
+                <li>第一节课内容</li>
+                <li>第一节课内容</li>
+             
+            </ul>
+            <ul>
+                <li>第二节课内容</li>
+                <li>第二节课内容</li>
+            </ul>
+
+            <ul>
+                    <li>第三节课内容</li>
+                    <li>第三节课内容</li>
+                </ul>
+        </div>
+
+
+    </div>
+
+    <script>
+        var oheader = document.getElementsByClassName("header")[0]
+        var oheaderli = oheader.getElementsByTagName("li");
+        var  obody = document.getElementsByClassName("body")[0]
+        var obodyul = obody.getElementsByTagName("ul")
+
+      
+            for(var i=0; i<oheaderli.length;i++){
+                oheaderli[i].index = i;
+                oheaderli[i].onmouseover = function(){
+                    for(var j=0; j<oheaderli.length;j++){
+                        oheaderli[j].className="";
+                        obodyul[j].className=""
+                    }
+                    this.className = "active"
+                    obodyul[this.index].className = "active"
+                }
+
+
+
+              
+        }
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
