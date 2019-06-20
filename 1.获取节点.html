@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">hello</div>   
+    <ul>
+        <li class="list">1</li>
+        <li class="list">2</li>
+        <li class="list">3</li>
+    </ul>
+
+    <Script>
+        var obox = document.getElementById("box") 
+        // 通过id名获取box：定义一个变量obox（这个变量名，o开头是一个内容，a开头是列表）去接收这个要获取的东西 
+        var alist = document.getElementsByClassName("list")
+        //通过class名获取list 列表
+        var  alist = document.getElementsByTagName("li");
+        //输出的时候和上一个一样，这个是通过标签名获取list列表 
+
+
+
+        var oBox = document.getElementById("box"); 
+        oBox.innerText = "hello world!";
+        //innerText 改变里面文字 （节点属性）
+    </Script>
+   
+ 
+   
+</body>
+</html>
+
+DOM--文档对象模型  
+可见：网页
+不可见：代码
+一个页面就是一个文档dom
+每个html标签都是一个dom节点
+HTML DOM 定义了访问和操作 HTML 文档的标准方法。
+
+DOM 将 HTML 文档表达为树结构
+
+以上说了html里三种常见的选择器
+1.id选择器
+2.类选择器
+3.标签选择权
+
+get 是获取一些东西 
+on是绑定一些东西 
+
+
