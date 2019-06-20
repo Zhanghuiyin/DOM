@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div1 {
+            width: 400px;
+            height: 50px;
+            background-color: red;
+            margin-top: 10px;
+            
+        }
+       
+    </style>
+
+</head>
+
+<body>
+    <div class="div1"></div>
+   
+
+    <script>
+        var adiv1 = document.getElementsByClassName("div1")[0];
+        adiv1.onmouseover = function () {
+            var that = this;
+            var timer = setInterval(function () {
+                that.style.width = that.offsetWidth + 10+ "px";
+                if(that.offsetWidth>700){
+                clearInterval(timer)
+                }  
+            }, 16)
+        }
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- offsetWidth 获取当前宽度 -->
+<!-- 16.6:计算出来点数字，这个数字过渡最平缓 -->
