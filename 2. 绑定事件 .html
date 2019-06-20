@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">hello</div>
+
+    <script>
+        var oBox = document.getElementById("box"); 
+        oBox.onclick = function(){
+            oBox.innerText = "hello world!"
+        }
+    
+      //实现功能：页面输出hello,点击的时候变成hello world!
+     // onclick 绑定事件（绑定鼠标点击发生的事件）   onclick ＝ function(){}函数里面写具体事件
+        
+    </script>
+    
+</body>
+</html>
+1.通过标签、类名获取的节点都相当于一个集合，所以给他们绑定事件的时候，要指明具体对象，在获取的后面加给［0］
+
+2.
+onclick  绑定鼠标点击发生的事件
+oncontextmenu 绑定点击鼠标右键发生的事件
+onmouseover 绑定移入鼠标发生的事件
