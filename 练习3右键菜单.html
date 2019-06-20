@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 200px;
+            background-color: grey;
+            display: none;
+            position: absolute;
+
+        }
+    
+    </style>
+</head>
+
+<body>
+
+   <ul id="box">
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+   </ul>
+    <script>
+        var oBox = document.getElementById("box");
+        document.oncontextmenu = function(e){ //注意是给页面绑定事件，用document.
+            oBox.style.display = "block";//一定要加引号。js里不加引号都当变量使用
+            oBox.style.top = e.clientY+"px";
+            oBox.style.left = e.clientX+"px";//别忘了在在css那声明定位
+            return false;
+        }
+    
+    </script>
+</body>
+</html>
