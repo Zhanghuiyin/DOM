@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 400px;
+      height: 400px;
+      background-color: gray;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -200px;
+      margin-left: -200px;
+      text-align: center
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1 class="num">100</h1>
+    <button id="btn">开始</button>
+  </div>
+  <script>
+    var oBtn = document.getElementById('btn');
+    var oNum = document.getElementsByClassName("num")[0];
+    var key = 1;
+    var timer = "";
+    oBtn.onclick =function(){
+      if(key == 1){
+        oBtn.innerText = '暂停'
+        timer = setInterval(function(){
+          oNum.innerText--
+        },1000)
+        key= -1; //这条语句的意思是倒计时的时候，再点击一下会再执行一次，就是一秒钟少俩数，所以要阻止这种行为，写key=-1;
+      }else{
+        clearInterval(timer);
+        oBtn.innerText = '开始';
+        key = 1;
+      }
+      
+    }
+  </script>
+</body>
+</html>
