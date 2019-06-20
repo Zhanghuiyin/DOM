@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+   
+    <script>
+
+        var oBox = document.getElementById("box");
+        oBox.onclick = function () {
+            oBox.style.width = 400+"px"
+            oBox.style.backgroundColor = "blue"
+        }
+       //js里是没有单位的，但是css里没有单位不好使，所以要用字符串拼接一个单位“px"
+       //上面就实现了一点击这个红色正方形，就会变宽到400px
+       //oBox.style.用这个改变样式（加在了上面style的内联样式上，所以我们在写css的时候很少用内联样式，怕后面写的js给覆盖掉）
+       //正常css里面的background-color 是这么写的，有个横线，但是js变量的命名规则不允许有横线，那么怎么不加横线又能让css认识呢？把横线删除，后面首字母大写
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+<!-- 凡是通过getElementsByClassName（）获取到的节点，都是一个数组collection，绑定事件的时候，
+不能直接用onclick，要指明具体变量：
+
+
+var oBox = document.getElementById("box");
+var aDiv = document.getElementsByClassName("div1")[0]
+console.log(oBox);      //输出<div id="box"></div>
+console.log(aDiv);      //输出HTMLCollection(1) 相当于一个集合 伪数组
+//HTMLCollection(1)点开就一个，第0个 0:div.div1
+// length:1
+
+
+oBox.onclick =function(){
+console.log("box");
+}
+//给这种id选择器绑定事件用on.click
+
+aDiv.onclick = function(){
+console.log("div1"); // 这回输出的也是<div class="div1">1111</div>，不是集合了（因为前面加［0］了）
+}
+//给类选择器绑定的时候不可以直接用，因为获取来的类选择器是个数组
+//所以想要给这种类选择器绑定事件的时候，要在获取节点之后 写一个［0］，里面的0代表第0个对象 -->
